@@ -8,26 +8,6 @@ import ListProducts from "../components/ListProducts";
 
 export default [
 
-    {
-        path: "/listproducts",
-        exact: true,
-        page: ListProducts
-    },
-    {
-        path: "/crearproducto",
-        exact: true,
-        page: CrearProducto,
-    },
-    {
-        path: "/producto",
-        exact: true,
-        page: Producto,
-    },
-    {
-        path: "/upload",
-        exact: true,
-        page: Upload,
-    },
 
     {
         path: "/",
@@ -36,7 +16,7 @@ export default [
     },
     {
         path: "*",
-        page: Error404
+        page: Home
     },
 ];
 
