@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { ToastContainer } from "react-toastify";
+import { AuthContext } from "./utils/contexts";
+import Routing from "./routes/Routing";
+import { isUserLogedApi } from './api/auth';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+export default function App() {
+
+
+
+  const [user, setUser] = useState(null);
+  const [loadUser, setLoadUser] = useState(false);
+  const [refreshCheckLogin, setRefreshCheckLogin] = useState(false);
+  useEffect(async () => {
+
+    await setUser(isUserLogedApi());
+    setLoadUser(true);
+    console.log(user)
+  }, [refreshCheckLogin])
+
+
+  return (<AuthContext.Provider value={user} >
+
+    <><Routing setRefreshCheckLogin={setRefreshCheckLogin} /> </>
+    <ToastContainer
+      position="top-right"
+      autoClose={1500}
+      hideProgressBar
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnVisibilityChange
+      pauseOnHover
+      draggable
+
+    />
+  </AuthContext.Provider>
   );
 }
 
-export default App;
