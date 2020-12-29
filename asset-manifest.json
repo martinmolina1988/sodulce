@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sodulce/static/css/main.4e69ce26.chunk.css",
-    "main.js": "/sodulce/static/js/main.5d4544f8.chunk.js",
-    "main.js.map": "/sodulce/static/js/main.5d4544f8.chunk.js.map",
+    "main.js": "/sodulce/static/js/main.7ca97239.chunk.js",
+    "main.js.map": "/sodulce/static/js/main.7ca97239.chunk.js.map",
     "runtime-main.js": "/sodulce/static/js/runtime-main.f86331da.js",
     "runtime-main.js.map": "/sodulce/static/js/runtime-main.f86331da.js.map",
     "static/css/2.1a02f21c.chunk.css": "/sodulce/static/css/2.1a02f21c.chunk.css",
@@ -30,6 +30,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.81bef52e.chunk.js",
     "static/css/main.4e69ce26.chunk.css",
-    "static/js/main.5d4544f8.chunk.js"
+    "static/js/main.7ca97239.chunk.js"
   ]
 }
