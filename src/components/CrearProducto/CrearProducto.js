@@ -73,7 +73,6 @@ export default function CrearProducto(props) {
 
 
 
-        window.location.reload();
 
     }
 
