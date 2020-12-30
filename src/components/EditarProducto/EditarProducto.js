@@ -136,7 +136,15 @@ export default function EditarProducto(props) {
                             <Add />
                         </div>
                         <Button className="btn btn-danger" onClick={() => setShowModal(true)}>Eliminar fotos</Button>
-                        <Button className="btn btn-danger" onClick={() => deleteAll(formData?.producto)}>Eliminar producto</Button>
+                        <Button className="btn btn-danger" onClick={() => {
+                            deleteAll(formData?.producto).then(response => {
+                                if (response.statusText) {
+                                    window.location.reload();
+                                }
+
+                            })
+
+                        }}>Eliminar producto</Button>
                         <EliminarImagenes show={showModal} setShow={setShowModal} formData={formData} />
                         <Row md={10} >
                             <Form.Control onBlur={onBlur} type="text" placeholder="Nombre" name="producto" onChange={onChange}

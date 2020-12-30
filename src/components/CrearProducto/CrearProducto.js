@@ -8,6 +8,7 @@ import { map } from 'lodash';
 import ListProducts from '../ListProducts';
 import "./CrearProducto.scss";
 import { toast } from 'react-toastify';
+import Cloud from '../cloud';
 // install Swiper components
 export default function CrearProducto(props) {
     const { show, setShow } = props;
@@ -26,7 +27,7 @@ export default function CrearProducto(props) {
     const [avatarUrl, setAvatarUrl] = useState(
         null
     );
-
+    const [dataImage, setDataImage] = useState(null)
     const onDropAvatar = (acceptedFile) => {
         const file = acceptedFile[0];
         setAvatarUrl(URL.createObjectURL(file));
@@ -66,16 +67,16 @@ export default function CrearProducto(props) {
         if (avatarFile) {
 
 
-            await addProduct(avatarFile, products.producto, products.description, products.precio).catch(() => {
-                toast.error("Error al subir el avatar");
-            })
         }
+        await addProduct(avatarFile, products.producto, products.description, products.precio).catch(() => {
+            toast.error("Error al subir el avatar");
+        })
 
 
 
 
     }
-
+    console.log(dataImage)
     return (
 
         <Modal className="tweet-modal"
@@ -95,7 +96,7 @@ export default function CrearProducto(props) {
                             <div className="avatar" style={{ background: `url('${avatarUrl}')` }}{...getRootAvatarProps()}>
                                 <input {...getInputAvatarProps()} />
                             </div>
-
+                            <Cloud setDataImage={setDataImage} />
                             <Row md={10} >
                                 <Form.Control type="text" placeholder="Nombre" name="producto" onChange={onChange}
                                 />

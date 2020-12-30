@@ -122,51 +122,95 @@ export async function uploadAvatarApi(file, img) {
     const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     console.log(file)
     let formData = new FormData();
-    formData.append('file', file);
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', 'martin')
+    const res = await Axios(
+        {
+            url: 'https://api.cloudinary.com/v1_1/djxxttv9t/image/upload',
+            method: 'POST',
+            data: data
+        }
+    )
+    if (res) {
+        formData.append('secure_url', res.data.secure_url);
+        formData.append('public_id', res.data.public_id);
+        formData.append('producto', img);
 
-    formData.append('producto', img);
-
-    Axios.post(`${API_HOST}/uploadimage`, formData, config)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        Axios.post(`${API_HOST}/uploadimage`, formData, config)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 }
+
+
 export async function editAvatarApi(file, img, id) {
     const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     let formData = new FormData();
-    formData.append('file', file);
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', 'martin')
+    const res = await Axios(
+        {
+            url: 'https://api.cloudinary.com/v1_1/djxxttv9t/image/upload',
+            method: 'POST',
+            data: data
+        }
+    )
+    if (res) {
+        formData.append('secure_url', res.data.secure_url);
+        formData.append('public_id', res.data.public_id);
+        formData.append('producto', img);
+        formData.append('_id', id);
 
-    formData.append('producto', img);
-    formData.append('_id', id);
-
-    Axios.post(`${API_HOST}/editimage`, formData, config)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        Axios.post(`${API_HOST}/editimage`, formData, config)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 }
 export async function addProduct(file, producto, description, precio) {
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    console.log(producto, description, precio)
+    const config = { headers: { 'Content-Type': 'application/json' } };
     let formData = new FormData();
-    formData.append('file', file);
-    formData.append('producto', producto);
-    formData.append('description', description);
-    formData.append('precio', precio);
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', 'martin')
+    const res = await Axios(
+        {
+            url: 'https://api.cloudinary.com/v1_1/djxxttv9t/image/upload',
+            method: 'POST',
+            data: data
+        }
+    )
+    if (res) {
+        console.log(res)
+        formData.append('secure_url', res.data.secure_url);
+        formData.append('public_id', res.data.public_id);
+        formData.append('producto', producto);
+        formData.append('description', description);
+        formData.append('precio', precio);
 
 
 
-    Axios.post(`${API_HOST}/insertoProducto`, formData, config)
-        .then((response) => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        Axios.post(`${API_HOST}/insertoProducto`, formData, config)
+            .then((response) => {
+                console.log(response);
+                if (response) {
+                    window.location.reload();
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 }
 
 export async function deleteAll(product) {
