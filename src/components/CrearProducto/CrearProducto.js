@@ -96,7 +96,6 @@ export default function CrearProducto(props) {
                             <div className="avatar" style={{ background: `url('${avatarUrl}')` }}{...getRootAvatarProps()}>
                                 <input {...getInputAvatarProps()} />
                             </div>
-                            <Cloud setDataImage={setDataImage} />
                             <Row md={10} >
                                 <Form.Control type="text" placeholder="Nombre" name="producto" onChange={onChange}
                                 />
