@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import "./ListProducts.scss"
 import { map } from "lodash";
-
+import whatsapp from "../../assets/png/whatsapp.png"
 
 import { listaProductos } from '../../api/ProducsApi';
 import { Button } from 'react-bootstrap';
 import BasicModal from '../modal/basicModal/BasicModal';
 import EditarProducto from '../EditarProducto';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 export default function ListProducts(props) {
     const [postre, setPostre] = useState(null)
     const [producto, setProducto] = useState(null)
@@ -29,6 +30,9 @@ export default function ListProducts(props) {
         setShowEdit(true);
 
     }
+    const phone = '541134054422'
+    const msg = encodeURIComponent("Quisiera tener más información acerca del producto " + formData.producto)
+    const href = `https://wa.me/${phone}/?text=${msg}`
 
     return (
 
@@ -53,9 +57,19 @@ export default function ListProducts(props) {
                             {user ? (
 
                                 <Button variant={"danger"} onClick={(e) => { e.stopPropagation(); setFormData(name); onClick() }}>Editar</Button>
-                            ) : (
-                                    <Button variant={"success"} onClick={(e) => { e.stopPropagation(); setFormData(name); }}>Encargar</Button>
+                            ) : (<>
+                                <Button variant={"success"} onClick={(e) => { e.stopPropagation(); setFormData(name); }}>
+                                    <a onClick={(e) => { e.stopPropagation(); setFormData(name); }}
+                                        target="_blank"
+                                        href={href}
+                                    >
+                                        <img src={whatsapp} alt="" />Encargar
+                                </a>
 
+                                </Button>
+
+
+                            </>
                                 )}
                         </div>
                     ))}
