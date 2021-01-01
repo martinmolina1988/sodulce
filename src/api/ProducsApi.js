@@ -1,8 +1,7 @@
 import Axios from "axios";
 import * as FormData from 'form-data';
 import { setTokenApi } from "./auth";
-//const API_HOST = "https://sodulce.herokuapp.com";
-const API_HOST = "http://localhost:4000";
+const API_HOST = "https://sodulce.herokuapp.com";
 
 export async function agregoProducto(product) {
     console.log(product)
