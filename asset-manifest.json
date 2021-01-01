@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sodulce/static/css/main.949532bd.chunk.css",
-    "main.js": "/sodulce/static/js/main.bb37d0c1.chunk.js",
-    "main.js.map": "/sodulce/static/js/main.bb37d0c1.chunk.js.map",
-    "runtime-main.js": "/sodulce/static/js/runtime-main.bf11ca08.js",
-    "runtime-main.js.map": "/sodulce/static/js/runtime-main.bf11ca08.js.map",
+    "main.css": "/sodulce/static/css/main.cac8beed.chunk.css",
+    "main.js": "/sodulce/static/js/main.36ba4d78.chunk.js",
+    "main.js.map": "/sodulce/static/js/main.36ba4d78.chunk.js.map",
+    "runtime-main.js": "/sodulce/static/js/runtime-main.7e35db62.js",
+    "runtime-main.js.map": "/sodulce/static/js/runtime-main.7e35db62.js.map",
     "static/css/2.1a02f21c.chunk.css": "/sodulce/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.639c881f.chunk.js": "/sodulce/static/js/2.639c881f.chunk.js",
-    "static/js/2.639c881f.chunk.js.map": "/sodulce/static/js/2.639c881f.chunk.js.map",
-    "static/js/3.e0dd1de6.chunk.js": "/sodulce/static/js/3.e0dd1de6.chunk.js",
-    "static/js/3.e0dd1de6.chunk.js.map": "/sodulce/static/js/3.e0dd1de6.chunk.js.map",
+    "static/js/2.c1121b36.chunk.js": "/sodulce/static/js/2.c1121b36.chunk.js",
+    "static/js/2.c1121b36.chunk.js.map": "/sodulce/static/js/2.c1121b36.chunk.js.map",
+    "static/js/3.38a4d6f1.chunk.js": "/sodulce/static/js/3.38a4d6f1.chunk.js",
+    "static/js/3.38a4d6f1.chunk.js.map": "/sodulce/static/js/3.38a4d6f1.chunk.js.map",
     "index.html": "/sodulce/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/sodulce/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.949532bd.chunk.css.map": "/sodulce/static/css/main.949532bd.chunk.css.map",
-    "static/js/2.639c881f.chunk.js.LICENSE.txt": "/sodulce/static/js/2.639c881f.chunk.js.LICENSE.txt",
+    "static/css/main.cac8beed.chunk.css.map": "/sodulce/static/css/main.cac8beed.chunk.css.map",
+    "static/js/2.c1121b36.chunk.js.LICENSE.txt": "/sodulce/static/js/2.c1121b36.chunk.js.LICENSE.txt",
     "static/media/1.0b3a88b0.jpg": "/sodulce/static/media/1.0b3a88b0.jpg",
     "static/media/2.739c42c5.jpg": "/sodulce/static/media/2.739c42c5.jpg",
     "static/media/3.2a24b7bc.jpg": "/sodulce/static/media/3.2a24b7bc.jpg",
@@ -27,10 +27,10 @@
     "static/media/whatsapp.0f74af52.png": "/sodulce/static/media/whatsapp.0f74af52.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.bf11ca08.js",
+    "static/js/runtime-main.7e35db62.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.639c881f.chunk.js",
-    "static/css/main.949532bd.chunk.css",
-    "static/js/main.bb37d0c1.chunk.js"
+    "static/js/2.c1121b36.chunk.js",
+    "static/css/main.cac8beed.chunk.css",
+    "static/js/main.36ba4d78.chunk.js"
   ]
 }
