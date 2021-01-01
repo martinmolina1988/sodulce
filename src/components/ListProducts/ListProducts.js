@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./ListProducts.scss"
 import { map } from "lodash";
 import whatsapp from "../../assets/png/whatsapp.png"
-
+import ShowMoreText from 'react-show-more-text';
 import { listaProductos } from '../../api/ProducsApi';
 import { Button } from 'react-bootstrap';
 import BasicModal from '../modal/basicModal/BasicModal';
@@ -34,6 +34,9 @@ export default function ListProducts(props) {
     const msg = encodeURIComponent("Quisiera tener más información acerca del producto " + formData.producto)
     const href = `https://wa.me/${phone}/?text=${msg}`
 
+    const executeOnClick = (isExpanded) => {
+        console.log(isExpanded);
+    }
     return (
 
         <>{postre &&
@@ -47,9 +50,24 @@ export default function ListProducts(props) {
 
                         <div className="card text-center" onClick={() => { setShow(true); setProducto(name.producto) }} >
                             <img className="card-img-top" src={name.principal} alt="Card image cap" />
-                            <div className="card-body">
+                            <div onClick={(e) => e.stopPropagation()} className="card-body">
                                 <h5 className="card-title">{name.producto}</h5>
-                                <p className="card-text">{name.description}</p>
+
+                                <ShowMoreText
+                                    /* Default options */
+                                    lines={2}
+                                    more='Mostrar más'
+                                    less='Mostrar menos'
+                                    className='content-css'
+                                    anchorClass='my-anchor-css-class'
+
+                                    expanded={false}
+                                    width={280}
+                                >
+
+
+                                    <p className="card-text">{name.description}</p>
+                                </ShowMoreText>
                             </div>
                             <p className="text-muted">
                                 Precio <cite title="Source Title">${name.precio}</cite>

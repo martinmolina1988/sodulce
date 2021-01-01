@@ -35,6 +35,12 @@
 }
 
 .container {
+    svg {
+        display: block;
+        margin: auto;
+        width: 35%;
+    }
+
     .boton-ingresar {
         background-color: transparent;
         color: deeppink;
@@ -58,7 +64,7 @@
         margin: 50px;
         padding: 10px;
         margin-top: 10px;
-        width: 4em;
+        width: 5em;
         -webkit-text-stroke: 1px black;
         -webkit-filter: invert(100%);
         filter: invert(100%);

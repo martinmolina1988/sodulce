@@ -11,12 +11,15 @@ import AvatarEditor from 'react-avatar-editor';
 import { Button } from 'react-bootstrap';
 import Signin from '../../components/Signin';
 import useAuth from '../../hooks/useAuth';
+import TextEditor from '../../components/textEditor';
+import SobreMi from '../../components/sobremi/SobreMi';
 
 
 export default function Home() {
     const [showModal, setShowModal] = useState(false)
     const [show, setShow] = useState(false)
     const user = useAuth();
+    const [showText, setShowText] = useState(false)
     console.log(user)
     const add = () => {
         setShowModal(true)
@@ -34,10 +37,10 @@ export default function Home() {
                 )
             }
             <Signin show={show} setShow={setShow} />
-            <Encabezado />
+            <Encabezado user={user} />
 
             <div className="wrapper">
-                <div className="titulo">
+                <div id="postres" className="titulo">
                     <h1 className="mx-auto">Postres</h1>
                 </div>
 
@@ -45,7 +48,21 @@ export default function Home() {
             {user && <img onClick={add} className="add" src={image} alt="agregar producto" />
             }
             <ListProducts />
-            <Footer />
+
+            <div className="wrapper">
+                <div className="titulo">
+                    <h1 id="sobremi" className="mx-auto">Sobre mi</h1>
+                </div>
+            </div>
+            { user &&
+                <Button onClick={() => setShowText(true)}>Editar Sobre mi</Button>
+            }
+
+            <SobreMi user={user} />
+            <div id="contacto" >
+                <Footer />
+            </div>
+            <TextEditor show={showText} setShow={setShowText} user={user} />
             <CrearProducto show={showModal} setShow={setShowModal} />
         </div>
     )

@@ -1,11 +1,49 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { Add, Edit } from "../../utils/icons";
 import logocompleto from "../../assets/images/logo-completo.png"
 import banner from "../../assets/images/Banner.jpg"
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import "./Encabezado.scss";
+import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { useDropzone } from "react-dropzone";
 
-export default function Encabezado() {
+import "./Encabezado.scss";
+import { updateBanner, buscoBanner } from '../../api/ProducsApi';
+import { toast } from 'react-toastify';
+
+export default function Encabezado(props) {
+    const { user } = props;
+    const [newImageFile, setNewImageFile] = useState(null);
+    const [banner, setBanner] = useState(null);
+    const [newImageUrl, setNewImageUrl] = useState(
+        null
+    );
+    const onDropNewImage = (acceptedFile) => {
+        const file = acceptedFile[0];
+        setNewImageUrl(URL.createObjectURL(file));
+        setNewImageFile(file);
+    };
+
+    const { getInputProps: getInputNewImageProps, getRootProps: getRootNewImageProps, } = useDropzone({
+        accept: "image/jpeg, image/png, image/bmp",
+        noKeyboard: true,
+        multiple: false,
+        onDrop: onDropNewImage
+
+    })
+
+    const onSubmit = async () => {
+        console.log("Click")
+        if (newImageFile) {
+            await updateBanner(newImageFile).catch(() => {
+                toast.error("Error al subir el avatar");
+            })
+        }
+    }
+
+    useEffect(() => {
+        buscoBanner().then(response => {
+            setBanner(response?.data[0].secure_url)
+        })
+    }, [user])
     return (
         <div className="container">
 
@@ -16,20 +54,27 @@ export default function Encabezado() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="collapse navbar-collapse justify-content-around">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/">Sobre mi!</Nav.Link>
-                        <Nav.Link href="/">Productos</Nav.Link>
-                        <Nav.Link href="/">Cursos</Nav.Link>
-                        <Nav.Link href="/">Novedades</Nav.Link>
-                        <Nav.Link href="/">Contacto</Nav.Link>
+                        <Nav.Link href="#">Home</Nav.Link>
+                        <Nav.Link href="#sobremi">Sobre mi!</Nav.Link>
+                        <Nav.Link href="#postres">Productos</Nav.Link>
+                        <Nav.Link href="#">Cursos</Nav.Link>
+                        <Nav.Link href="#">Novedades</Nav.Link>
+                        <Nav.Link href="#contacto">Contacto</Nav.Link>
 
                     </Nav>
 
                 </Navbar.Collapse>
             </Navbar>
-
+            {user &&
+                <><div className="banner" {...getRootNewImageProps()}>
+                    <h4>Cambiar banner</h4>
+                    <input {...getInputNewImageProps()} />
+                    <Add />
+                    <img className="image" src={newImageUrl} alt="" />
+                </div>
+                    <Button onClick={onSubmit}>Subir</Button>
+                </>}
             <img src={banner} className="banner d-block w-100" alt="Banner" />
-
 
         </div>
     )

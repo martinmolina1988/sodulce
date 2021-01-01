@@ -1,7 +1,8 @@
 import Axios from "axios";
 import * as FormData from 'form-data';
 import { setTokenApi } from "./auth";
-const API_HOST = "https://sodulce.herokuapp.com";
+//const API_HOST = "https://sodulce.herokuapp.com";
+const API_HOST = "http://localhost:4000";
 
 export async function agregoProducto(product) {
     console.log(product)
@@ -26,6 +27,31 @@ export async function buscoProducto(product) {
             params: {
                 producto: product
             }
+
+        })
+        return response;
+    } catch (e) {
+        console.log(e)
+    }
+}
+export async function buscoBanner() {
+    try {
+        const response = await Axios({
+            url: `${API_HOST}/buscobanner`,
+
+
+        })
+        return response;
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export async function buscoSobremi() {
+    try {
+        const response = await Axios({
+            url: `${API_HOST}/buscoSobremi`,
+
 
         })
         return response;
@@ -115,6 +141,46 @@ export async function updateInfoApi(data) {
         return response;
     } catch (e) {
         console.log(e)
+    }
+}
+export async function editoSobreMi(data) {
+    console.log(data)
+    try {
+        const response = await Axios({
+            url: `${API_HOST}/editoSobreMi`,
+
+            method: "POST",
+            data: { "sobremi": data }
+        })
+        return response;
+    } catch (e) {
+        console.log(e)
+    }
+}
+export async function updateBanner(file) {
+    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    let formData = new FormData();
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', 'martin')
+    const res = await Axios(
+        {
+            url: 'https://api.cloudinary.com/v1_1/djxxttv9t/image/upload',
+            method: 'POST',
+            data: data
+        }
+    )
+    if (res) {
+        formData.append('secure_url', res.data.secure_url);
+        formData.append('public_id', res.data.public_id);
+
+        Axios.post(`${API_HOST}/editoBanner`, formData, config)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 }
 
