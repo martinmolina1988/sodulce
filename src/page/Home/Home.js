@@ -16,6 +16,7 @@ import SobreMi from '../../components/sobremi/SobreMi';
 
 
 export default function Home() {
+
     const [showModal, setShowModal] = useState(false)
     const [show, setShow] = useState(false)
     const user = useAuth();
@@ -29,6 +30,7 @@ export default function Home() {
         setShow(true)
     }
     return (
+
         <div className="container  h-100">
             {user ? (
                 <Button className="boton-ingresar"  >Salir</Button>
@@ -64,6 +66,8 @@ export default function Home() {
             </div>
             <TextEditor show={showText} setShow={setShowText} user={user} />
             <CrearProducto show={showModal} setShow={setShowModal} />
+
+            <div className="fb-comments" data-href="https://martinmolina1988.github.io/sodulce/" data-width="100%" data-numposts="5"></div>
         </div>
     )
 }
