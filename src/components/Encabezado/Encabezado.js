@@ -56,7 +56,7 @@ export default function Encabezado(props) {
                     <Nav className="mr-auto">
                         <Nav.Link href="#">Home</Nav.Link>
                         <Nav.Link href="#sobremi">Sobre mi!</Nav.Link>
-                        <Nav.Link href="#postres">Productos</Nav.Link>
+                        <Nav.Link href="#postres">Postres</Nav.Link>
                         <Nav.Link href="#">Cursos</Nav.Link>
                         <Nav.Link href="#">Novedades</Nav.Link>
                         <Nav.Link href="#contacto">Contacto</Nav.Link>
