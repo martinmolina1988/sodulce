@@ -61,13 +61,13 @@ export default function Home() {
             }
 
             <SobreMi user={user} />
+            <div className="fb-comments" data-href="https://martinmolina1988.github.io/sodulce/" data-width="100%" data-numposts="5"></div>
             <div id="contacto" >
                 <Footer />
             </div>
             <TextEditor show={showText} setShow={setShowText} user={user} />
             <CrearProducto show={showModal} setShow={setShowModal} />
 
-            <div className="fb-comments" data-href="https://martinmolina1988.github.io/sodulce/" data-width="100%" data-numposts="5"></div>
         </div>
     )
 }
