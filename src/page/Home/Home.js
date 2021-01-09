@@ -61,6 +61,7 @@ export default function Home() {
             }
 
             <SobreMi user={user} />
+            <h2>Tus opinion importa! Deja tu comentario:</h2>
             <div className="fb-comments" data-href="https://martinmolina1988.github.io/sodulce/" data-width="100%" data-numposts="5"></div>
             <div id="contacto" >
                 <Footer />
