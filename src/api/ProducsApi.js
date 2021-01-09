@@ -1,7 +1,8 @@
 import Axios from "axios";
 import * as FormData from 'form-data';
 import { setTokenApi } from "./auth";
-const API_HOST = "https://sodulce.herokuapp.com";
+const API_HOSTs = "https://sodulce.herokuapp.com";
+const API_HOST = "http://localhost:4000";
 
 export async function agregoProducto(product) {
     console.log(product)
@@ -92,12 +93,15 @@ export async function listaFotos(product) {
         console.log(e)
     }
 }
-export async function listaProductos() {
+export async function listaProductos(tipo, valor) {
     try {
         const response = await Axios({
             url: `${API_HOST}/listaProductos`,
 
-
+            params: {
+                tipo,
+                valor
+            }
 
         })
         return response;

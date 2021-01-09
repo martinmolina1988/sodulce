@@ -53,9 +53,9 @@ export default function Footer() {
                                 <h4>REDES SOCIALES</h4>
                                 <ul className="social-network social-circle">
                                     <li>
-                                        <img src={facebook} alt="facebook" />
+                                        <a href="https://www.facebook.com/sofias.desserts.1" target="_blank" ><img className="image-footer" src={facebook} alt="facebook" /></a>
                                     </li>
-                                    <li><img src={instagram} alt="instagram" /> </li>
+                                    <li><a href="https://www.instagram.com/_sodulce/" target="_blank" ><img className="image-footer" src={instagram} alt="instagram" target="_blank" /> </a></li>
                                 </ul>
                             </div>
                         </div>

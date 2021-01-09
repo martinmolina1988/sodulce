@@ -12,6 +12,23 @@ cite {
 }
 
 .container {
+    .botones-precios {
+        left: auto;
+    }
+
+    .precio {
+        background: transparent;
+        color: deeppink;
+        border-color: deeppink;
+        margin: 10px;
+
+        &:hover {
+            background: transparent;
+            color: purple;
+            border-color: purple;
+
+        }
+    }
 
     button {
         border-radius: 50px;

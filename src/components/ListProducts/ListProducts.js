@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 export default function ListProducts(props) {
     const [postre, setPostre] = useState(null)
     const [producto, setProducto] = useState(null)
+    const [tipo, setTipo] = useState("fecha")
+    const [valor, setValor] = useState(-1)
     const [show, setShow] = useState(false);
     const [showEdit, setShowEdit] = useState(false);
     const [inicio, setInicio] = useState(true);
@@ -19,11 +21,12 @@ export default function ListProducts(props) {
     const user = useAuth();
     useEffect(() => {
 
-        listaProductos().then(response => {
+        listaProductos(tipo, valor).then(response => {
+            console.log(response)
             setPostre(response?.data)
         })
         setInicio(true)
-    }, [inicio])
+    }, [tipo, valor])
 
     const onClick = () => {
 
@@ -39,64 +42,68 @@ export default function ListProducts(props) {
     }
     return (
 
-        <>{postre &&
-            <div className="container" >
-                < div className="card-columns " >
-                    {postre.map(name => (
+        <>
+            <div className="row justify-content-center h-100">
+                <Button className="precio" onClick={() => { setValor(1); setTipo("precio") }}>Menor precio</Button>
+                <Button className="precio" onClick={() => { setValor(-1); setTipo("precio") }}>Mayor precio</Button>
+            </div>   {postre &&
+                <div className="container" >
+                    < div className="card-columns " >
+                        {postre.map(name => (
 
 
 
 
 
-                        <div className="card text-center" onClick={() => { setShow(true); setProducto(name.producto) }} >
-                            <img className="card-img-top" src={name.principal} alt="Card image cap" />
-                            <div onClick={(e) => e.stopPropagation()} className="card-body">
-                                <h5 className="card-title">{name.producto}</h5>
+                            <div className="card text-center" onClick={() => { setShow(true); setProducto(name.producto) }} >
+                                <img className="card-img-top" src={name.principal} alt="Card image cap" />
+                                <div onClick={(e) => e.stopPropagation()} className="card-body">
+                                    <h5 className="card-title">{name.producto}</h5>
 
-                                <ShowMoreText
-                                    /* Default options */
-                                    lines={2}
-                                    more='Mostrar más'
-                                    less='Mostrar menos'
-                                    className='content-css'
-                                    anchorClass='my-anchor-css-class'
+                                    <ShowMoreText
+                                        /* Default options */
+                                        lines={2}
+                                        more='Mostrar más'
+                                        less='Mostrar menos'
+                                        className='content-css'
+                                        anchorClass='my-anchor-css-class'
 
-                                    expanded={false}
-                                    width={280}
-                                >
-
-
-                                    <p className="card-text">{name.description}</p>
-                                </ShowMoreText>
-                            </div>
-                            <p className="text-muted">
-                                Precio <cite title="Source Title">${name.precio}</cite>
-                            </p>
-                            {user ? (
-
-                                <Button variant={"danger"} onClick={(e) => { e.stopPropagation(); setFormData(name); onClick() }}>Editar</Button>
-                            ) : (<>
-                                <Button variant={"success"} onClick={(e) => { e.stopPropagation(); setFormData(name); }}>
-                                    <a onClick={(e) => { e.stopPropagation(); setFormData(name); }}
-                                        target="_blank"
-                                        href={href}
+                                        expanded={false}
+                                        width={280}
                                     >
-                                        <img src={whatsapp} alt="" />Encargar
+
+
+                                        <p className="card-text">{name.description}</p>
+                                    </ShowMoreText>
+                                </div>
+                                <p className="text-muted">
+                                    Precio <cite title="Source Title">${name.precio}</cite>
+                                </p>
+                                {user ? (
+
+                                    <Button variant={"danger"} onClick={(e) => { e.stopPropagation(); setFormData(name); onClick() }}>Editar</Button>
+                                ) : (<>
+                                    <Button variant={"success"} onClick={(e) => { e.stopPropagation(); setFormData(name); }}>
+                                        <a onClick={(e) => { e.stopPropagation(); setFormData(name); }}
+                                            target="_blank"
+                                            href={href}
+                                        >
+                                            <img src={whatsapp} alt="" />Encargar
                                 </a>
 
-                                </Button>
+                                    </Button>
 
 
-                            </>
-                                )}
-                        </div>
-                    ))}
-                </div>
-                <BasicModal show={show} setShow={setShow} producto={producto} />
-                <EditarProducto show={showEdit} formData={formData} setShow={setShowEdit} />
+                                </>
+                                    )}
+                            </div>
+                        ))}
+                    </div>
+                    <BasicModal show={show} setShow={setShow} producto={producto} />
+                    <EditarProducto show={showEdit} formData={formData} setShow={setShowEdit} />
 
-            </div >
-        }
+                </div >
+            }
         </>
 
     )
