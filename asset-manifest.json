@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/sodulce/static/css/main.0c49a9d1.chunk.css",
-    "main.js": "/sodulce/static/js/main.e47e4eac.chunk.js",
-    "main.js.map": "/sodulce/static/js/main.e47e4eac.chunk.js.map",
+    "main.css": "/sodulce/static/css/main.b50e5bea.chunk.css",
+    "main.js": "/sodulce/static/js/main.38a5f1ca.chunk.js",
+    "main.js.map": "/sodulce/static/js/main.38a5f1ca.chunk.js.map",
     "runtime-main.js": "/sodulce/static/js/runtime-main.7e35db62.js",
     "runtime-main.js.map": "/sodulce/static/js/runtime-main.7e35db62.js.map",
     "static/css/2.1a02f21c.chunk.css": "/sodulce/static/css/2.1a02f21c.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.38a4d6f1.chunk.js.map": "/sodulce/static/js/3.38a4d6f1.chunk.js.map",
     "index.html": "/sodulce/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/sodulce/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.0c49a9d1.chunk.css.map": "/sodulce/static/css/main.0c49a9d1.chunk.css.map",
+    "static/css/main.b50e5bea.chunk.css.map": "/sodulce/static/css/main.b50e5bea.chunk.css.map",
     "static/js/2.2c744f8b.chunk.js.LICENSE.txt": "/sodulce/static/js/2.2c744f8b.chunk.js.LICENSE.txt",
     "static/media/1.0b3a88b0.jpg": "/sodulce/static/media/1.0b3a88b0.jpg",
     "static/media/2.739c42c5.jpg": "/sodulce/static/media/2.739c42c5.jpg",
@@ -21,6 +21,7 @@
     "static/media/Banner.8f42b755.jpg": "/sodulce/static/media/Banner.8f42b755.jpg",
     "static/media/Home.scss": "/sodulce/static/media/Sweet_Dessert.7899f695.woff2",
     "static/media/add.a0272a63.svg": "/sodulce/static/media/add.a0272a63.svg",
+    "static/media/arrow.8033f35c.png": "/sodulce/static/media/arrow.8033f35c.png",
     "static/media/edit.e958932d.svg": "/sodulce/static/media/edit.e958932d.svg",
     "static/media/instagram.75e0546a.png": "/sodulce/static/media/instagram.75e0546a.png",
     "static/media/logo-completo.f564a787.png": "/sodulce/static/media/logo-completo.f564a787.png",
@@ -30,7 +31,7 @@
     "static/js/runtime-main.7e35db62.js",
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.2c744f8b.chunk.js",
-    "static/css/main.0c49a9d1.chunk.css",
-    "static/js/main.e47e4eac.chunk.js"
+    "static/css/main.b50e5bea.chunk.css",
+    "static/js/main.38a5f1ca.chunk.js"
   ]
 }
