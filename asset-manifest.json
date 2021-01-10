@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sodulce/static/css/main.b50e5bea.chunk.css",
-    "main.js": "/sodulce/static/js/main.38a5f1ca.chunk.js",
-    "main.js.map": "/sodulce/static/js/main.38a5f1ca.chunk.js.map",
+    "main.js": "/sodulce/static/js/main.3c992a06.chunk.js",
+    "main.js.map": "/sodulce/static/js/main.3c992a06.chunk.js.map",
     "runtime-main.js": "/sodulce/static/js/runtime-main.7e35db62.js",
     "runtime-main.js.map": "/sodulce/static/js/runtime-main.7e35db62.js.map",
     "static/css/2.1a02f21c.chunk.css": "/sodulce/static/css/2.1a02f21c.chunk.css",
@@ -21,7 +21,7 @@
     "static/media/Banner.8f42b755.jpg": "/sodulce/static/media/Banner.8f42b755.jpg",
     "static/media/Home.scss": "/sodulce/static/media/Sweet_Dessert.7899f695.woff2",
     "static/media/add.a0272a63.svg": "/sodulce/static/media/add.a0272a63.svg",
-    "static/media/arrow.8033f35c.png": "/sodulce/static/media/arrow.8033f35c.png",
+    "static/media/arrow2.1fae8073.png": "/sodulce/static/media/arrow2.1fae8073.png",
     "static/media/edit.e958932d.svg": "/sodulce/static/media/edit.e958932d.svg",
     "static/media/instagram.75e0546a.png": "/sodulce/static/media/instagram.75e0546a.png",
     "static/media/logo-completo.f564a787.png": "/sodulce/static/media/logo-completo.f564a787.png",
@@ -32,6 +32,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.2c744f8b.chunk.js",
     "static/css/main.b50e5bea.chunk.css",
-    "static/js/main.38a5f1ca.chunk.js"
+    "static/js/main.3c992a06.chunk.js"
   ]
 }
