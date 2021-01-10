@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import ListProducts from '../../components/ListProducts';
 
 import image from "../../assets/png/add.png"
-import arrow from "../../assets/png/arrow.png"
+import arrow from "../../assets/png/arrow2.png"
 import "./Home.scss";
 import Upload from '../../components/upload';
 import CrearProducto from '../../components/CrearProducto/CrearProducto';
