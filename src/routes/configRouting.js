@@ -14,6 +14,11 @@ export default [
         page: TextEditor,
     },
     {
+        path: "/sodulce/totop",
+        exact: true,
+        page: ToTop,
+    },
+    {
         path: "/totop",
         exact: true,
         page: ToTop,
