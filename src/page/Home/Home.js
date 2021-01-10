@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Encabezado from '../../components/Encabezado';
 import Footer from '../../components/Footer';
 import ListProducts from '../../components/ListProducts';
 
 import image from "../../assets/png/add.png"
+import arrow from "../../assets/png/arrow.png"
 import "./Home.scss";
 import Upload from '../../components/upload';
 import CrearProducto from '../../components/CrearProducto/CrearProducto';
@@ -29,6 +30,31 @@ export default function Home() {
     const onClick = () => {
         setShow(true)
     }
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Show button when page is scorlled upto given distance
+    const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+    // Set the top cordinate to 0
+    // make scrolling smooth
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", toggleVisibility);
+    }, []);
+
     return (
 
         <div className="container  h-100">
@@ -69,7 +95,13 @@ export default function Home() {
             </div>
             <TextEditor show={showText} setShow={setShowText} user={user} />
             <CrearProducto show={showModal} setShow={setShowModal} />
+            <div className="scroll-to-top">
 
+                {isVisible &&
+                    <div onClick={scrollToTop}>
+                        <img className="arrow" src={arrow} alt='Go to top' />
+                    </div>}
+            </div>
         </div>
     )
 }

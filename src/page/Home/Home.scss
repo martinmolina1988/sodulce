@@ -35,6 +35,17 @@
 }
 
 .container {
+    .arrow {
+        width: 50px;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     .opinion {
         margin-top: 10%;
         margin-bottom: 2%;

@@ -12,11 +12,7 @@ export default [
         exact: true,
         page: TextEditor,
     },
-    {
-        path: "/sodulce/cloud",
-        exact: true,
-        page: Cloud,
-    },
+
     {
         path: "/",
         exact: true,
