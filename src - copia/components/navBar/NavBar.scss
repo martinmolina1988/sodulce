@@ -1,0 +1,89 @@
+a.nav-link {
+    @media (min-width: 992px) {
+        border-bottom: 1px dashed deeppink !important;
+        border-top: 1px dashed deeppink !important;
+        margin: 0 3%;
+
+    }
+
+    @media (max-width: 992px) {
+        border-bottom: 1px dashed deeppink;
+        width: 15%;
+    }
+}
+
+.link {
+    @media (min-width: 992px) {
+        border-bottom: 1px dashed deeppink;
+        border-top: 1px dashed deeppink;
+        margin: 0 3%;
+
+    }
+
+    @media (max-width: 992px) {
+        border-bottom: 1px dashed deeppink;
+        width: 15%;
+    }
+}
+
+#basic-nav-dropdown {
+    width: 100%;
+
+}
+
+.navbar-nav {
+
+    width: 100%;
+    margin-left: 2%;
+}
+
+.encabezado {
+    margin: 0;
+
+
+
+    .bg-light {
+        background-color: #97D9E1 !important;
+    }
+}
+
+.triang {
+    top: 0;
+    background: url("../../assets/png/top-triang.png") repeat-x;
+}
+
+
+.link {
+    font-size: 20px;
+    color: white !important;
+    text-shadow: 1px 1px 2px black;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px;
+
+
+    &:hover {
+        text-decoration: none;
+        color: deeppink !important;
+        transition: 0.3s;
+        text-shadow: 1px 1px 2px black;
+    }
+}
+
+
+
+.logos {
+
+    width: 100%;
+
+    .logo {
+        width: 20%;
+        z-index: 2000;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
