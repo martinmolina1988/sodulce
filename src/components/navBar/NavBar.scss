@@ -12,6 +12,17 @@ a.nav-link {
     }
 }
 
+h6 {
+    margin-top: 15% !important;
+    background-color: deeppink;
+    width: 30px;
+    font-size: 23px !important;
+    text-align: center;
+    color: black;
+    font-weight: bold !important;
+    border-radius: 25px;
+}
+
 .link {
     @media (min-width: 992px) {
         border-bottom: 1px dashed deeppink;
@@ -31,16 +42,35 @@ a.nav-link {
 
 }
 
+.navbar {
+    display: block !important;
+}
+
 .navbar-nav {
 
     width: 100%;
     margin-left: 2%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 65%;
 }
 
 .encabezado {
     margin: 0;
 
+    .fondo-celeste {
 
+        background-color: #97D9E1;
+        height: 50px;
+
+        .flex {
+            display: flex;
+        }
+    }
 
     .bg-light {
         background-color: #97D9E1 !important;
@@ -48,7 +78,6 @@ a.nav-link {
 }
 
 .triang {
-    top: 0;
     background: url("../../assets/png/top-triang.png") repeat-x;
 }
 
@@ -58,9 +87,9 @@ a.nav-link {
     color: white !important;
     text-shadow: 1px 1px 2px black;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 15px 15px;
     padding: 5px;
-
+    white-space: nowrap;
 
     &:hover {
         text-decoration: none;
@@ -78,7 +107,7 @@ a.nav-link {
 
     .logo {
         width: 20%;
-        z-index: 2000;
+        z-index: 5;
         position: absolute;
         top: 50%;
         left: 0;

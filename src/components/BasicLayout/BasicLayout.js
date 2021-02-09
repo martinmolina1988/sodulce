@@ -7,15 +7,14 @@ import NavBar from '../navBar';
 import Footer from '../Footer';
 import Signin from '../Signin';
 import useAuth from '../../hooks/useAuth';
-
 import Etiquetas from './Etiquetas';
 
 export default function BasicLayout(props) {
 
-    const { className, children } = props;
+    const { className, children,
+    } = props;
     const [show, setShow] = useState(false)
     const [isVisible, setIsVisible] = useState(false);
-
     const user = useAuth();
 
 
@@ -44,22 +43,32 @@ export default function BasicLayout(props) {
     const onClick = () => {
         setShow(true)
     }
+    const salir = () => {
+        localStorage.removeItem('token');
+        window.location.reload();
+    }
 
     return (
 
 
         <Container className={`basic-layout ${className}`}>
-            {user ? (
-                <Button className="boton-ingresar"  >Salir</Button>
-            ) : (
+
+
+            <Signin show={show} setShow={setShow} />
+            <NavBar className="sticky-top1" >
+                {user ? (
+                    <Button className="boton-ingresar" onClick={salir}>Salir</Button>
+                ) : (
                     <Button className="boton-ingresar" onClick={onClick} >Ingresar</Button>
                 )
-            }
-            <Signin show={show} setShow={setShow} />
-            <Encabezado />
-            <NavBar className="sticky-top1" />
+                }
 
-            <Etiquetas />
+            </NavBar>
+
+            <Encabezado />
+
+
+            <Etiquetas className="d-none d-sm-none" />
             {children}
 
 

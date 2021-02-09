@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
 import { Candado, Tarjeta, Etiqueta } from "../../utils/icons";
@@ -5,9 +7,9 @@ import { Candado, Tarjeta, Etiqueta } from "../../utils/icons";
 import "./Etiquetas.scss";
 export default function Etiquetas() {
     return (
-        <div className="div">
+        <div className="div  d-none d-sm-block">
             <Row>
-                <Col className="col1">
+                <Col >
                     <div className="columnas">
 
                         <Candado className="svg" />
@@ -29,7 +31,7 @@ export default function Etiquetas() {
                         </div>
                     </div>
                 </Col>
-                <Col>
+                <Col className="col1">
                     <div className="columnas">
                         <Etiqueta />
                         <div className="contenido">

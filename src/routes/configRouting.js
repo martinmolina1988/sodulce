@@ -1,19 +1,17 @@
-import Cloud from "../components/cloud";
-import Postres from "../components/postres";
 import SobreMi from "../components/sobremi/SobreMi";
-import TextEditor from "../components/textEditor";
 import ToTop from "../components/toTop";
 import Home from "../page/Home";
+import Contacto from "../components/Contacto";
 
 
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
 
 
     {
-        path: "/postres",
+        path: "/contacto",
         exact: true,
-        page: Postres,
+        page: Contacto
     },
     {
         path: "/sobremi",

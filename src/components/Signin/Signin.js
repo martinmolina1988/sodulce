@@ -37,6 +37,7 @@ export default function Signin(props) {
                     })
                     .finally(() => {
                         setSignInLoading(false);
+                        window.location.reload();
                     });
             }
         }
